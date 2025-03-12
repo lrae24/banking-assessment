@@ -25,7 +25,7 @@ public class BankingService {
     @Autowired
     public BankingService(AccountRepository accountRepository, SNSClientService snsClient) {
         this.accountRepository = accountRepository;
-        this.snsClient = snsClientService;
+        this.snsClient = snsClient;
     }
 
     public Optional<BigDecimal> getCurrentBalance(Long accountId) {
