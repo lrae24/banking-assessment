@@ -9,6 +9,7 @@ import com.sanlam.banking.repository.AccountRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -27,6 +28,8 @@ public class BankingService {
         this.accountRepository = accountRepository;
         this.snsClient = snsClient;
     }
+    @Value("${sns.topicArn}")
+    private String snsTopicArn;
 
     public Optional<BigDecimal> getCurrentBalance(Long accountId) {
         return accountRepository.findBalanceById(accountId);

@@ -23,8 +23,7 @@ public class BankAccountController {
         this.bankingService = bankingService;
     }
 
-    @Value("${sns.topicArn}")
-    private String snsTopicArn;
+
 
 
     @Operation(summary = "Perform a withdrawal")
