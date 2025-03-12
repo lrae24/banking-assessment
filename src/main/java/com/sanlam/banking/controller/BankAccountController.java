@@ -28,7 +28,6 @@ public class BankAccountController {
 
     @Operation(summary = "Perform a withdrawal")
     @PostMapping("/withdraw")
-    @Transactional
     public String withdraw(@RequestParam("accountId") Long accountId, @RequestParam("amount") BigDecimal amount) {
         try {
             Optional<BigDecimal> currentBalance = bankingService.getCurrentBalance(accountId);
