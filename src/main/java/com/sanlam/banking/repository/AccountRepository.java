@@ -1,6 +1,6 @@
 package com.sanlam.banking.repository;
 
-import com.sanlam.banking.entitities.Account;
+import com.sanlam.banking.entitity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
