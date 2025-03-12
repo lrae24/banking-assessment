@@ -40,8 +40,8 @@ public class BankAccountController {
             if (balance.compareTo(amount) <= 0) {
                 return "Insufficient funds for withdrawal";
             }
-
-            if (bankingService.updateAccountBalance(accountId, amount)) {
+               BigDecimal balanceAmount = balance.subtract(amount);
+            if (bankingService.updateAccountBalance(accountId, balanceAmount)) {
                 bankingService.publishWithdrawalEvent(amount, accountId);
                 return "Withdrawal successful";
             } else {
